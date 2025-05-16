@@ -2,10 +2,8 @@ import express from "express";
 
 const app = express();
 
-app.get("/", (req, res) => {
-  res.send("getting data there");
-});
+app.use("/", express.static("./public"));
 
-app.listen(8080, () => {
+app.listen(process.env.PORT || 8080, () => {
   console.log("listening data here");
 });
